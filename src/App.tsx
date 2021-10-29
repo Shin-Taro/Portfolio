@@ -1,12 +1,15 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+import Pages from './pages/Pages';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      text
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <Pages/>
+    </BrowserRouter>
   );
 };
-
 
 export default App;
