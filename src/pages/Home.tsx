@@ -14,10 +14,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 220px);
 
   ${media.lessThan("medium")`
-    height: calc(100vh - 120px);
+    height: calc(100vh - 200px);
   `}
 `;
 

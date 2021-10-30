@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Wrapper = styled.div`
   padding-top: 140px;
+  padding-bottom: 80px;
   background-color: darkgray;
   ${media.lessThan("medium")`
     padding-top: 100px;
