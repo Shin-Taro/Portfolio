@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 
 const About = () => {
   return(
@@ -55,6 +56,9 @@ const About = () => {
 const Wrapper = styled.div`
   width: 73vw;
   margin: 0 auto;
+  ${media.lessThan("medium")`
+    width: 85vw;
+  `}
 `;
 
 const Container = styled.div`
@@ -62,5 +66,8 @@ const Container = styled.div`
   padding: 40px;
   background-color: gray;
   border-radius: 30px;
+  ${media.lessThan("medium")`
+    padding: 20px;
+  `}
 `;
 export default About;
