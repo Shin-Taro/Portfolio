@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Pages from './pages/Pages';
 
@@ -19,6 +20,7 @@ const App = () => {
       <BrowserRouter>
         <Header/>
         <Pages/>
+        <Footer/>
       </BrowserRouter>
     </>
   );
