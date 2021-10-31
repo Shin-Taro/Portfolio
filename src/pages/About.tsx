@@ -8,26 +8,28 @@ const About = () => {
       <h1>About me</h1>
       <Container>
         <table>
-          <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td>Shintaro</td>
-          </tr>
-          <tr>
-            <td>Age</td>
-            <td>:</td>
-            <td>24</td>
-          </tr>
-          <tr>
-            <td>Favorite</td>
-            <td>:</td>
-            <td>野球、ゲーム、漫画、お酒(飲み会)</td>
-          </tr>
-          <tr>
-            <td>History</td>
-            <td>:</td>
-            <td>2020学部卒 → 大手ISP就職 → 約半年後スタートアップにSE見習いとして転職 → now!!</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>:</td>
+              <td>Shintaro</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>:</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>Favorite</td>
+              <td>:</td>
+              <td>野球、ゲーム、漫画、お酒(飲み会)</td>
+            </tr>
+            <tr>
+              <td>History</td>
+              <td>:</td>
+              <td>2020学部卒 → 大手ISP就職 → 約半年後スタートアップにSE見習いとして転職 → now!!</td>
+            </tr>
+          </tbody>
         </table>
       </Container>
       <h1>FAQ</h1>
