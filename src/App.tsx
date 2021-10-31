@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import media from 'styled-media-query';
-import reset from "styled-reset";
-import Footer from './components/Footer';
+import { ResetStyle } from './styles/reset';
 import Header from './components/Header';
 import Pages from './pages/Pages';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <>
-      <GlobalStyle/>
+      <ResetStyle/>
       <BrowserRouter>
         <Header/>
         <Wrapper>
@@ -21,13 +21,6 @@ const App = () => {
     </>
   );
 };
-
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
-`;
 
 const Wrapper = styled.div`
   padding-top: 140px;
