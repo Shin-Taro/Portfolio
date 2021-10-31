@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import { LinkList } from '../Types';
@@ -9,11 +9,17 @@ type Props = {
 }
 
 const Navbar = ({links}:Props) => {
+  const location = useLocation();
+
   const renderLinks = (): JSX.Element[] => {
     const list: JSX.Element[] = links.map(item => {
+      let isActive: boolean = false;
+      if(location.pathname === item.to){
+        isActive = true;
+      }
       return(
         <Item key={item.id}>
-          <StyledLink to={item.to}>{item.page}</StyledLink>
+          <StyledLink isActive={isActive} to={item.to}>{item.page}</StyledLink>
         </Item>
       );
     });
@@ -52,7 +58,7 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<{isActive:boolean}>`
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -60,6 +66,7 @@ const StyledLink = styled(Link)`
   text-align: center;
   font-size: 18px;
   text-decoration: none;
+  border-bottom: ${({isActive}) => isActive ? "solid 1px black" : "none"};
 `;
 
 export default Navbar;
