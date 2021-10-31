@@ -6,7 +6,7 @@ import AppImg from "../images/myApp.png";
 
 const Works = () => {
   const renderList = ():JSX.Element[] => {
-    const list = works.map(item => {
+    const list: JSX.Element[] = works.map(item => {
       const textList = item.desc.map((item, index) => {
         return(
           <li key={index}>{item}</li>
