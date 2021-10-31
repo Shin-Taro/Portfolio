@@ -4,10 +4,10 @@ import media from "styled-media-query";
 
 const Skill = () => {
   const renderList = ():JSX.Element[] => {
-    const list: JSX.Element[] = skills.map((item, index) => {
+    const list: JSX.Element[] = skills.map(item => {
       const levels: any[] = [];
       for (let i = 0; i < item.level; i++) {
-        levels.push(<span key={item.id + "level"}>★</span>);
+        levels.push(<span key={item.id + "level" + i}>★</span>);
       }
       return(
         <Item key={item.id}>
