@@ -2,9 +2,25 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { LinkList } from '../Types';
 
-const NavMenu = () => {
+type Props = {
+  links: LinkList
+}
+
+const NavMenu = ({links}:Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const renderLinks = (): JSX.Element[] => {
+    const list: JSX.Element[] = links.map(item => {
+      return(
+        <Item key={item.id}>
+          <StyledLink to={item.to}>{item.page}</StyledLink>
+        </Item>
+      );
+    });
+    return list
+  };
 
   const handleOnClick = ():void => {
     setIsOpen(!isOpen);
@@ -19,18 +35,7 @@ const NavMenu = () => {
         <ModalContent>
           <nav>
             <ul>
-              <Item>
-                <StyledLink to="/">HOME</StyledLink>
-              </Item>
-              <Item>
-                <StyledLink to="/about">ABOUT</StyledLink>
-              </Item>
-              <Item>
-                <StyledLink to="/skill">SKILL</StyledLink>
-              </Item>
-              <Item>
-                <StyledLink to="/works">WORKS</StyledLink>
-              </Item>
+              {renderLinks()}
             </ul>
           </nav>
         </ModalContent>

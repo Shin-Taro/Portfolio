@@ -1,15 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { LinkList } from '../Types';
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
 
 const Header = () => {
+  const links: LinkList = [
+    {
+      id: 1,
+      to: "/",
+      page: "HOME",
+    },
+    {
+      id: 2,
+      to: "/about",
+      page: "ABOUT",
+    },
+    {
+      id: 3,
+      to: "/skill",
+      page: "SKILL",
+    },
+    {
+      id: 4,
+      to: "/works",
+      page: "WORKS",
+    },
+  ];
+
   return(
     <Wrapper>
       <Title>Shintaro's Portfolio</Title>
-      <Navbar/>
-      <NavMenu/>
+      <Navbar links={links} />
+      <NavMenu links={links} />
     </Wrapper>
   );
 };
