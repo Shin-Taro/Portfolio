@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import media from 'styled-media-query';
 import { ResetStyle } from './styles/reset';
+import { theme } from './styles/theme';
 import Header from './components/Header';
 import Pages from './pages/Pages';
 import Footer from './components/Footer';
@@ -12,22 +13,23 @@ const App = () => {
     <>
       <ResetStyle/>
       <BrowserRouter>
-        <Header/>
-        <Wrapper>
-          <Pages/>
-        </Wrapper>
-        <Footer/>
+        <ThemeProvider theme={theme}>
+          <Header/>
+          <Wrapper color="dark">
+            <Pages/>
+          </Wrapper>
+          <Footer/>
+        </ThemeProvider>
       </BrowserRouter>
     </>
   );
 };
 
 const Wrapper = styled.div`
-  padding-top: 140px;
-  padding-bottom: 80px;
-  background-color: darkgray;
+  margin-top: ${props => props.theme.layout.height.head.large};
+  margin-bottom: ${props => props.theme.layout.height.foot.large};
   ${media.lessThan("medium")`
-    padding-top: 100px;
+    margin-top: ${props => props.theme.layout.height.head.small};
   `}
 `;
 
