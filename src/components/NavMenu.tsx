@@ -31,7 +31,7 @@ const NavMenu = ({links}:Props) => {
       <Box>
         <Hamburger onClick={() => handleOnClick()}/>
       </Box>
-      <Modal isOpen={isOpen} onClick={() => handleOnClick()}>
+      <Modal $isOpen={isOpen} onClick={() => handleOnClick()}>
         <ModalContent>
           <nav>
             <ul>
@@ -90,8 +90,8 @@ const Hamburger = styled.span`
     }
 `;
 
-const Modal = styled.div<{isOpen : boolean}>`
-  display: ${({isOpen}) => isOpen ? "block" : "none"};
+const Modal = styled.div<{$isOpen : boolean}>`
+  display: ${({$isOpen}) => $isOpen ? "block" : "none"};
   position: fixed;
   top: 0;
   left: 0;

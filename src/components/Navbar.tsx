@@ -13,13 +13,13 @@ const Navbar = ({links}:Props) => {
 
   const renderLinks = (): JSX.Element[] => {
     const list: JSX.Element[] = links.map(item => {
-      let isActive: boolean = false;
+      let current: boolean = false;
       if(location.pathname === item.to){
-        isActive = true;
+        current = true;
       }
       return(
         <Item key={item.id}>
-          <StyledLink isActive={isActive} to={item.to}>{item.page}</StyledLink>
+          <StyledLink $current={current} to={item.to}>{item.page}</StyledLink>
         </Item>
       );
     });
@@ -58,7 +58,7 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)<{isActive:boolean}>`
+const StyledLink = styled(Link)<{$current:boolean}>`
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -66,7 +66,7 @@ const StyledLink = styled(Link)<{isActive:boolean}>`
   text-align: center;
   font-size: 18px;
   text-decoration: none;
-  border-bottom: ${({isActive}) => isActive ? "solid 1px black" : "none"};
+  border-bottom: ${({$current}) => $current ? "solid 1px black" : "none"};
 `;
 
 export default Navbar;
