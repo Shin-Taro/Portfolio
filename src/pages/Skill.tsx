@@ -80,7 +80,7 @@ const skills: SkillList = [
     id: 7,
     name: "jest",
     level: 2,
-    desc: "Reactで作ったアプリはjeatでテストを書いています。実務でテストを書いたことがないので勉強中です。"
+    desc: "Reactで作ったアプリはjestでテストを書いています。実務でテストを書いたことがないので勉強中です。"
   },
   {
     id: 8,
