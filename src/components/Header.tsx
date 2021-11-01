@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { LinkList } from '../Types';
+import { LinkList } from '../types';
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
 

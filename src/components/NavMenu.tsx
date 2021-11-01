@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { LinkList } from '../Types';
+import { LinkList } from '../types';
 
 type Props = {
   links: LinkList
