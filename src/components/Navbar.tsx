@@ -32,15 +32,15 @@ const Navbar = ({links}:Props) => {
   };
 
   return(
-      <Wrapper>
+      <NavWrapper>
         <List>
           {renderLinks()}
         </List>
-      </Wrapper>
+      </NavWrapper>
   );
 };
 
-const Wrapper = styled.nav`
+const NavWrapper = styled.nav`
   margin: 0 auto;
   height: 100%;
   max-width: 800px;
@@ -67,11 +67,13 @@ const StyledLink = styled(Link)<{$current:boolean}>`
   display: inline-block;
   width: 100%;
   height: 100%;
-  line-height: 80px;
+  line-height: ${props => props.theme.layout.height.head.large};
+  border-bottom: ${({$current}) => $current ? "solid 3px" : "none"};
+  border-color: ${props => props.theme.color.gray};
   text-align: center;
-  font-size: 18px;
+  font-size: ${props => props.theme.font.size.subTitle.large};
+  color: ${props => props.theme.color.gray};;
   text-decoration: none;
-  border-bottom: ${({$current}) => $current ? "solid 1px black" : "none"};
 `;
 
 export default Navbar;
