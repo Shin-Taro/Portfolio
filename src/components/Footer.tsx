@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text } from '../styles/utility';
+import { SmallText } from '../styles/utility';
 import GitHubLog from '../images/GitHub.png';
 
 const Footer = () => {
   return(
     <FooterWrap>
-      <Text>&copy;2021 Shintaro</Text>
+      <SmallText>&copy;2021 Shintaro</SmallText>
       <SocialLink href="https://github.com/Shin-Taro" target="_blank" rel="noopener noreferrer">
         <img src={GitHubLog} alt="GitHub" />
       </SocialLink>

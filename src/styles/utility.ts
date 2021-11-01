@@ -20,7 +20,7 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Text = styled.p`
+export const SmallText = styled.p`
   color: ${props => props.theme.color.gray};
   font-size: ${props => props.theme.font.size.secondary.large};
   ${media.lessThan("medium")`
