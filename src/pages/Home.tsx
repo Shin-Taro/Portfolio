@@ -1,33 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Wrapper } from '../styles/utility';
 
 const Home = () => {
   return(
-    <Wrapper>
-      <Text>Wellcome to<br/>　Shintaro's Portfolio</Text>
-    </Wrapper>
+    <FirstView color="dark">
+      <Title>Wellcome to<br/>　Shintaro's Portfolio</Title>
+    </FirstView>
   );
 };
 
-const Wrapper = styled.div`
+const FirstView = styled(Wrapper)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 220px);
-
-  ${media.lessThan("medium")`
-    height: calc(100vh - 200px);
-  `}
 `;
 
-const Text = styled.p`
-  transform: translateY(-140px);
+const Title = styled.h1`
   line-height: 60px;
-  font-size: 40px;
+  font-size: ${props => props.theme.font.size.top.large};
+  color: ${props => props.theme.color.white};
   ${media.lessThan("medium")`
-    transform: translateY(-120px);
-    font-size: 26px;
+    font-size: ${props => props.theme.font.size.top.small};
   `}
 `;
 
