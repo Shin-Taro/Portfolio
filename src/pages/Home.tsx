@@ -5,7 +5,7 @@ import { Wrapper } from '../styles/utility';
 
 const Home = () => {
   return(
-    <FirstView color="dark">
+    <FirstView>
       <Title>Wellcome to<br/>　Shintaro's Portfolio</Title>
     </FirstView>
   );
