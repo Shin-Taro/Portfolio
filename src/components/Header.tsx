@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
+import { Title } from '../styles/utility';
 
 const Header = () => {
   const links = [
@@ -29,32 +30,32 @@ const Header = () => {
   ];
 
   return(
-    <Wrapper>
-      <Title>Shintaro's Portfolio</Title>
+    <HeaderWrap>
+      <HeaderTitle>Shintaro's Portfolio</HeaderTitle>
       <Navbar links={links} />
       <NavMenu links={links} />
-    </Wrapper>
+    </HeaderWrap>
   );
 };
 
-const Wrapper = styled.header`
+const HeaderWrap = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100vw;
-  height: 80px;
-  background-color: white;
+  height: ${props => props.theme.layout.height.head.large};
+  background-color: ${props => props.theme.color.white};
   ${media.lessThan("medium")`
-    height: 70px;
+    height: ${props => props.theme.layout.height.head.small};
   `}
 `;
 
-const Title = styled.h1`
+const HeaderTitle = styled(Title)`
   display: none;
   margin-left: 20px;
   line-height: 70px;
-  font-size: 18px;
+  text-align: left;
   ${media.lessThan("medium")`
     display: block;
   `}
