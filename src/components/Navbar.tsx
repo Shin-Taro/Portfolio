@@ -2,10 +2,15 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { LinkList } from '../types';
+
+type LinkItem = {
+  id: number,
+  to: string,
+  page: string,
+}
 
 type Props = {
-  links: LinkList
+  links: LinkItem[]
 }
 
 const Navbar = ({links}:Props) => {
