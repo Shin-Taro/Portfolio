@@ -29,7 +29,7 @@ export const theme = {
     }
   },
   boxShadow:{
-    primary: " 0 0 15px rgba(0, 0, 0, .3)"
+    primary: "0 0 15px rgba(0, 0, 0, .3)"
   },
   layout:{
     width:{
