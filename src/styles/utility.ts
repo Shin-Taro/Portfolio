@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
-  color: ${props => props.theme.color.gray};
+  color: ${props => props.theme.color[props.color]};
   font-size: ${props => props.theme.font.size.title.large};
   ${media.lessThan("medium")`
     font-size: ${props => props.theme.font.size.title.small};
@@ -21,7 +21,7 @@ export const Title = styled.h1`
 `;
 
 export const SmallText = styled.p`
-  color: ${props => props.theme.color.gray};
+  color: ${props => props.theme.color[props.color]};
   font-size: ${props => props.theme.font.size.secondary.large};
   ${media.lessThan("medium")`
     font-size: ${props => props.theme.font.size.secondary.small};
