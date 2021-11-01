@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Text } from '../styles/utility';
 import GitHubLog from '../images/GitHub.png';
 
 const Footer = () => {
   return(
-    <Wrapper>
+    <FooterWrap>
       <Text>&copy;2021 Shintaro</Text>
-      <StyledLink href="https://github.com/Shin-Taro" target="_blank" rel="noopener noreferrer">
+      <SocialLink href="https://github.com/Shin-Taro" target="_blank" rel="noopener noreferrer">
         <img src={GitHubLog} alt="GitHub" />
-      </StyledLink>
-    </Wrapper>
+      </SocialLink>
+    </FooterWrap>
   );
 };
 
-const Wrapper = styled.footer`
+const FooterWrap = styled.footer`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -27,11 +28,7 @@ const Wrapper = styled.footer`
   border-top: solid 1px black;
 `;
 
-const Text = styled.p`
-  font-size: 14px;
-`;
-
-const StyledLink = styled.a`
+const SocialLink = styled.a`
   display: block;
   margin-left: 20px;
 
