@@ -6,7 +6,7 @@ import GitHubLog from '../images/GitHub.png';
 const Footer = () => {
   return(
     <FooterWrap>
-      <SmallText>&copy;2021 Shintaro</SmallText>
+      <SmallText color="gray">&copy;2021 Shintaro</SmallText>
       <SocialLink href="https://github.com/Shin-Taro" target="_blank" rel="noopener noreferrer">
         <img src={GitHubLog} alt="GitHub" />
       </SocialLink>

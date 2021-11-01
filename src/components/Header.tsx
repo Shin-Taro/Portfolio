@@ -31,7 +31,7 @@ const Header = () => {
 
   return(
     <HeaderWrap>
-      <HeaderTitle>Shintaro's Portfolio</HeaderTitle>
+      <HeaderTitle color="gray">Shintaro's Portfolio</HeaderTitle>
       <Navbar links={links} />
       <NavMenu links={links} />
     </HeaderWrap>
