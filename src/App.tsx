@@ -6,7 +6,6 @@ import { theme } from './styles/theme';
 import Header from './components/Header';
 import Pages from './pages/Pages';
 import Footer from './components/Footer';
-import { Wrapper } from './styles/utility';
 
 const App = () => {
   return (
@@ -15,9 +14,7 @@ const App = () => {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <Header/>
-          <Wrapper color="dark">
-            <Pages/>
-          </Wrapper>
+          <Pages/>
           <Footer/>
         </ThemeProvider>
       </BrowserRouter>
