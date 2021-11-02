@@ -13,9 +13,10 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: ${props => props.theme.layout.width.small};
-  margin: 0 auto;
+  margin: 0 auto ${props => props.theme.layout.margin.top.large};
   ${media.lessThan("medium")`
     width: ${props => props.theme.layout.width.large};
+    margin: 0 auto ${props => props.theme.layout.margin.top.small}
   `}
 `;
 
