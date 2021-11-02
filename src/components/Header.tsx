@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
-import { Title } from '../styles/utility';
+import { SubTitle } from '../styles/utility';
 
 const Header = () => {
   const links = [
@@ -51,7 +51,7 @@ const HeaderWrap = styled.header`
   `}
 `;
 
-const HeaderTitle = styled(Title)`
+const HeaderTitle = styled(SubTitle)`
   display: none;
   margin-left: 20px;
   line-height: 70px;
