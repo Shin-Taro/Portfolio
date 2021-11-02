@@ -36,6 +36,16 @@ export const SubTitle = styled.h1`
     font-size: ${props => props.theme.font.size.subTitle.small};
   `}
 `;
+
+export const Text = styled.p`
+  line-height: 2em;
+  color: ${props => props.theme.color[props.color]};
+  font-size: ${props => props.theme.font.size.primary.large};
+  ${media.lessThan("medium")`
+    font-size: ${props => props.theme.font.size.primary.small};
+  `}
+`;
+
 export const SmallText = styled.p`
   color: ${props => props.theme.color[props.color]};
   font-size: ${props => props.theme.font.size.secondary.large};
