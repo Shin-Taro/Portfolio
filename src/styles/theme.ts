@@ -11,16 +11,16 @@ export const theme = {
         small: "26px"
       },
       title:{
+        large: "30px",
+        small: "28px"
+      },
+      subTitle:{
         large: "24px",
         small: "20px"
       },
-      subTitle:{
+      primary:{
         large: "18px",
         small: "16px"
-      },
-      primary:{
-        large: "16px",
-        small: "14px"
       },
       secondary:{
         large: "14px",
