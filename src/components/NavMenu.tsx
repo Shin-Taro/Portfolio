@@ -2,10 +2,15 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { LinkList } from '../Types';
+
+type LinkItem = {
+  id: number,
+  to: string,
+  page: string,
+}
 
 type Props = {
-  links: LinkList
+  links: LinkItem[]
 }
 
 const NavMenu = ({links}:Props) => {
@@ -27,11 +32,11 @@ const NavMenu = ({links}:Props) => {
   };
 
   return(
-    <Wrapper>
+    <MenuWrapper>
       <Box>
         <Hamburger onClick={() => handleOnClick()}/>
       </Box>
-      <Modal isOpen={isOpen} onClick={() => handleOnClick()}>
+      <Modal $isOpen={isOpen} onClick={() => handleOnClick()}>
         <ModalContent>
           <nav>
             <ul>
@@ -40,11 +45,11 @@ const NavMenu = ({links}:Props) => {
           </nav>
         </ModalContent>
       </Modal>
-    </Wrapper>
+    </MenuWrapper>
   );
 };
 
-const Wrapper = styled.div`
+const MenuWrapper = styled.div`
   display: none;
   position: relative;
   ${media.lessThan("medium")`
@@ -68,7 +73,7 @@ const Hamburger = styled.span`
   display: inline-block;
   width: 30px;
   height: 4px;
-  background-color: black;
+  background-color: ${props => props.theme.color.dark};
 
   &::before{
     content: "";
@@ -77,7 +82,7 @@ const Hamburger = styled.span`
     display: inline-block;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: ${props => props.theme.color.dark};
   }
   &::after{
       content: "";
@@ -86,12 +91,12 @@ const Hamburger = styled.span`
       display: inline-block;
       width: 100%;
       height: 100%;
-      background-color: black;
+      background-color: ${props => props.theme.color.dark};
     }
 `;
 
-const Modal = styled.div<{isOpen : boolean}>`
-  display: ${({isOpen}) => isOpen ? "block" : "none"};
+const Modal = styled.div<{$isOpen : boolean}>`
+  display: ${({$isOpen}) => $isOpen ? "block" : "none"};
   position: fixed;
   top: 0;
   left: 0;
@@ -106,9 +111,9 @@ const ModalContent = styled.div`
   width: 120px;
   height: auto;
   padding: 30px 0;
-  background-color: white;
+  background-color: ${props => props.theme.color.white};
   border-radius: 15px;
-  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  box-shadow: ${props => props.theme.boxShadow.primary};
 `;
 
 const Item = styled.li`
@@ -122,7 +127,8 @@ const StyledLink = styled(Link)`
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 18px;
+  font-size: ${props => props.theme.font.size.primary.small};
+  color: ${props => props.theme.color.gray};
   text-decoration: none;
 `;
 

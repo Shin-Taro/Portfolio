@@ -2,10 +2,15 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { LinkList } from '../Types';
+
+type LinkItem = {
+  id: number,
+  to: string,
+  page: string,
+}
 
 type Props = {
-  links: LinkList
+  links: LinkItem[]
 }
 
 const Navbar = ({links}:Props) => {
@@ -13,13 +18,13 @@ const Navbar = ({links}:Props) => {
 
   const renderLinks = (): JSX.Element[] => {
     const list: JSX.Element[] = links.map(item => {
-      let isActive: boolean = false;
+      let current: boolean = false;
       if(location.pathname === item.to){
-        isActive = true;
+        current = true;
       }
       return(
         <Item key={item.id}>
-          <StyledLink isActive={isActive} to={item.to}>{item.page}</StyledLink>
+          <StyledLink $current={current} to={item.to}>{item.page}</StyledLink>
         </Item>
       );
     });
@@ -27,15 +32,15 @@ const Navbar = ({links}:Props) => {
   };
 
   return(
-      <Wrapper>
+      <NavWrapper>
         <List>
           {renderLinks()}
         </List>
-      </Wrapper>
+      </NavWrapper>
   );
 };
 
-const Wrapper = styled.nav`
+const NavWrapper = styled.nav`
   margin: 0 auto;
   height: 100%;
   max-width: 800px;
@@ -58,15 +63,17 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)<{isActive:boolean}>`
+const StyledLink = styled(Link)<{$current:boolean}>`
   display: inline-block;
   width: 100%;
   height: 100%;
-  line-height: 80px;
+  line-height: ${props => props.theme.layout.height.head.large};
+  border-bottom: ${({$current}) => $current ? "solid 3px" : "none"};
+  border-color: ${props => props.theme.color.gray};
   text-align: center;
-  font-size: 18px;
+  font-size: ${props => props.theme.font.size.subTitle.small};
+  color: ${props => props.theme.color.gray};;
   text-decoration: none;
-  border-bottom: ${({isActive}) => isActive ? "solid 1px black" : "none"};
 `;
 
 export default Navbar;

@@ -1,41 +1,25 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import styled, { createGlobalStyle } from "styled-components";
-import media from 'styled-media-query';
-import reset from "styled-reset";
-import Footer from './components/Footer';
+import { ThemeProvider } from "styled-components";
+import { ResetStyle } from './styles/reset';
+import { theme } from './styles/theme';
 import Header from './components/Header';
 import Pages from './pages/Pages';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <>
-      <GlobalStyle/>
+      <ResetStyle/>
       <BrowserRouter>
-        <Header/>
-        <Wrapper>
+        <ThemeProvider theme={theme}>
+          <Header/>
           <Pages/>
-        </Wrapper>
-        <Footer/>
+          <Footer/>
+        </ThemeProvider>
       </BrowserRouter>
     </>
   );
 };
-
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
-`;
-
-const Wrapper = styled.div`
-  padding-top: 140px;
-  padding-bottom: 80px;
-  background-color: darkgray;
-  ${media.lessThan("medium")`
-    padding-top: 100px;
-  `}
-`;
 
 export default App;
