@@ -11,6 +11,14 @@ export const Wrapper = styled.div`
   `}
 `;
 
+export const Container = styled.div`
+  width: ${props => props.theme.layout.width.small};
+  margin: 0 auto;
+  ${media.lessThan("medium")`
+    width: ${props => props.theme.layout.width.large};
+  `}
+`;
+
 export const Title = styled.h1`
   text-align: center;
   color: ${props => props.theme.color[props.color]};
