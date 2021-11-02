@@ -8,6 +8,8 @@ import ReactLogo from "../images/React.png";
 import TypeScript from "../images/typescript.png";
 import jest from "../images/jest.png";
 import Firebase from "../images/firebase.png";
+import HPImg from "../images/HP.png";
+import AppImg from "../images/myApp.png";
 
 export const icons = {
   GitHub: GitHub,
@@ -20,4 +22,9 @@ export const icons = {
   TypeScript: TypeScript,
   jest: jest,
   Firebase: Firebase
+}
+
+export const WebSites = {
+  HP: HPImg,
+  App: AppImg
 }
