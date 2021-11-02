@@ -33,8 +33,8 @@ export const theme = {
   },
   layout:{
     width:{
-      large: "73px",
-      small: "85px"
+      large: "85vw",
+      small: "73vw"
     },
     height:{
       head:{
