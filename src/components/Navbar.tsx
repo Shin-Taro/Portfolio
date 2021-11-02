@@ -71,7 +71,7 @@ const StyledLink = styled(Link)<{$current:boolean}>`
   border-bottom: ${({$current}) => $current ? "solid 3px" : "none"};
   border-color: ${props => props.theme.color.gray};
   text-align: center;
-  font-size: ${props => props.theme.font.size.subTitle.large};
+  font-size: ${props => props.theme.font.size.subTitle.small};
   color: ${props => props.theme.color.gray};;
   text-decoration: none;
 `;
