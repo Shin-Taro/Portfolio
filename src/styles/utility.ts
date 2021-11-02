@@ -28,6 +28,14 @@ export const Title = styled.h1`
   `}
 `;
 
+export const SubTitle = styled.h1`
+  text-align: center;
+  color: ${props => props.theme.color[props.color]};
+  font-size: ${props => props.theme.font.size.subTitle.large};
+  ${media.lessThan("medium")`
+    font-size: ${props => props.theme.font.size.subTitle.small};
+  `}
+`;
 export const SmallText = styled.p`
   color: ${props => props.theme.color[props.color]};
   font-size: ${props => props.theme.font.size.secondary.large};
