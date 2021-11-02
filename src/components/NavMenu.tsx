@@ -127,7 +127,7 @@ const StyledLink = styled(Link)`
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: ${props => props.theme.font.size.subTitle.small};
+  font-size: ${props => props.theme.font.size.primary.small};
   color: ${props => props.theme.color.gray};
   text-decoration: none;
 `;
