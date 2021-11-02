@@ -37,7 +37,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h1`
-  text-align: center;
+  line-height: 2em;
   color: ${props => props.theme.color[props.color] || props.theme.color.white};
   font-size: ${props => props.theme.font.size.subTitle.large};
   ${media.lessThan("medium")`
@@ -55,6 +55,7 @@ export const Text = styled.p`
 `;
 
 export const SmallText = styled.p`
+  line-height: 2em;
   color: ${props => props.theme.color[props.color] || props.theme.color.white};
   font-size: ${props => props.theme.font.size.secondary.large};
   ${media.lessThan("medium")`
