@@ -20,6 +20,13 @@ export const Container = styled.div`
   `}
 `;
 
+export const Box = styled.div`
+  margin-top: ${props => props.theme.layout.margin.top.large};
+  ${media.lessThan("medium")`
+    margin-top: ${props => props.theme.layout.margin.top.small};
+  `}
+`;
+
 export const Title = styled.h1`
   text-align: center;
   color: ${props => props.theme.color[props.color] || props.theme.color.white};

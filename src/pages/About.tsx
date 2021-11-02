@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
-import { Wrapper, Container, Title, Text } from "../styles/utility";
+import { Wrapper, Container, Box, Title, Text } from "../styles/utility";
 
 const About = () => {
   return(
@@ -106,13 +106,6 @@ const About = () => {
     </Wrapper>
   );
 };
-
-const Box = styled.div`
-  margin-top: ${props => props.theme.layout.margin.top.large};
-  ${media.lessThan("medium")`
-    margin-top: ${props => props.theme.layout.margin.top.small};
-  `}
-`;
 
 const TextAria = styled.div`
   width: 100%;
