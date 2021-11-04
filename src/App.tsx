@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <ResetStyle/>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <ThemeProvider theme={theme}>
           <Header/>
           <Pages/>
