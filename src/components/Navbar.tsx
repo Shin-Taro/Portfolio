@@ -24,7 +24,7 @@ const Navbar = ({links}:Props) => {
       }
       return(
         <Item key={item.id}>
-          <StyledLink $current={current} to={item.to}>{item.page}</StyledLink>
+          <StyledLink data-current={current} to={item.to}>{item.page}</StyledLink>
         </Item>
       );
     });
@@ -63,17 +63,20 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)<{$current:boolean}>`
+const StyledLink = styled(Link)`
   display: inline-block;
   width: 100%;
   height: 100%;
   line-height: ${props => props.theme.layout.height.head.large};
-  border-bottom: ${({$current}) => $current ? "solid 3px" : "none"};
-  border-color: ${props => props.theme.color.gray};
   text-align: center;
   font-size: ${props => props.theme.font.size.subTitle.small};
   color: ${props => props.theme.color.gray};;
   text-decoration: none;
+
+  &[data-current="true"]{
+    border-bottom: solid 3px;
+    border-color: ${props => props.theme.color.gray};
+  }
 `;
 
 export default Navbar;
