@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import media from 'styled-media-query';
 
 type LinkItem = {
@@ -24,7 +24,7 @@ const Navbar = ({links}:Props) => {
       }
       return(
         <Item key={item.id}>
-          <StyledLink $current={current} to={item.to}>{item.page}</StyledLink>
+          <StyledLink data-current={current} to={item.to}>{item.page}</StyledLink>
         </Item>
       );
     });
@@ -63,17 +63,40 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const StyledLink = styled(Link)<{$current:boolean}>`
+const widen = keyframes`
+  from{
+    width: 0%;
+  }
+  to{
+    width: 70%;
+  }
+`;
+
+const StyledLink = styled(Link)`
   display: inline-block;
+  position: relative;
   width: 100%;
   height: 100%;
   line-height: ${props => props.theme.layout.height.head.large};
-  border-bottom: ${({$current}) => $current ? "solid 3px" : "none"};
-  border-color: ${props => props.theme.color.gray};
   text-align: center;
   font-size: ${props => props.theme.font.size.subTitle.small};
   color: ${props => props.theme.color.gray};;
   text-decoration: none;
+
+  &[data-current="true"]{
+    &::after{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: calc(100% - 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      height: 3px;
+      background-color: ${props => props.theme.color.gray};
+      border-radius: 50%;
+      animation: ${widen} 0.7s ease-out forwards;
+    }
+  }
 `;
 
 export default Navbar;

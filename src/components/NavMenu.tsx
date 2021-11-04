@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 
 type LinkItem = {
@@ -104,6 +104,15 @@ const Modal = styled.div<{$isOpen : boolean}>`
   height: 100vh;
 `;
 
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+`;
+
 const ModalContent = styled.div`
   position: absolute;
   top: 10px;
@@ -114,6 +123,7 @@ const ModalContent = styled.div`
   background-color: ${props => props.theme.color.white};
   border-radius: 15px;
   box-shadow: ${props => props.theme.boxShadow.primary};
+  animation: ${fadeIn} 0.2s linear;
 `;
 
 const Item = styled.li`
