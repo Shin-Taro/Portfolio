@@ -94,7 +94,7 @@ const works: WorkList = [
       {img: icons.React, imgAlt:"Reactのロゴ"},
       {img: icons.TypeScript, imgAlt:"TypeScriptのロゴ"},
     ],
-    img: WebSites.HP,
+    img: WebSites.Port,
     imgAlt: "自己紹介サイト",
     link: "#",
     name: "自己紹介サイト",
