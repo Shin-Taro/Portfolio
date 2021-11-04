@@ -102,7 +102,7 @@ const works: WorkList = [
       "このサイトです。",
       "自己紹介サイトが欲しいと思い作成しました。",
     ],
-    source: "https://github.com/Shin-Taro/Portfolio",
+    source: "https://github.com/Shin-Taro/Portfolio/",
     memo:"#",
   },
   {
