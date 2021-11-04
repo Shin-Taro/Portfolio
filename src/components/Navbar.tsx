@@ -65,6 +65,7 @@ const Item = styled.li`
 
 const StyledLink = styled(Link)`
   display: inline-block;
+  position: relative;
   width: 100%;
   height: 100%;
   line-height: ${props => props.theme.layout.height.head.large};
@@ -74,8 +75,18 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 
   &[data-current="true"]{
-    border-bottom: solid 3px;
-    border-color: ${props => props.theme.color.gray};
+    &::after{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: calc(100% - 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 5px;
+      background-color: ${props => props.theme.color.gray};
+      border-radius: 50%;
+    }
   }
 `;
 
