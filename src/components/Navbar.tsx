@@ -68,7 +68,7 @@ const widen = keyframes`
     width: 0%;
   }
   to{
-    width: 100%;
+    width: 70%;
   }
 `;
 
@@ -91,11 +91,10 @@ const StyledLink = styled(Link)`
       top: calc(100% - 10px);
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;
       height: 3px;
       background-color: ${props => props.theme.color.gray};
       border-radius: 50%;
-      animation: ${widen} 0.7s ease-out;
+      animation: ${widen} 0.7s ease-out forwards;
     }
   }
 `;
