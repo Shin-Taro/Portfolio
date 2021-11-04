@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import media from 'styled-media-query';
 
 type LinkItem = {
@@ -63,6 +63,15 @@ const Item = styled.li`
   height: 100%;
 `;
 
+const widen = keyframes`
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+`;
+
 const StyledLink = styled(Link)`
   display: inline-block;
   position: relative;
@@ -79,13 +88,14 @@ const StyledLink = styled(Link)`
       content: "";
       display: inline-block;
       position: absolute;
-      top: calc(100% - 8px);
+      top: calc(100% - 10px);
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      height: 5px;
+      height: 3px;
       background-color: ${props => props.theme.color.gray};
       border-radius: 50%;
+      animation: ${widen} 0.7s ease-out;
     }
   }
 `;
