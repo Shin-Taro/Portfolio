@@ -103,7 +103,7 @@ const works: WorkList = [
       "自己紹介サイトが欲しいと思い作成しました。",
     ],
     source: "https://github.com/Shin-Taro/Portfolio/",
-    memo:"#",
+    memo: "https://qiita.com/Shin-Taro/items/19de7ef02399116c5d4e"
   },
   {
     id: "homepage",
